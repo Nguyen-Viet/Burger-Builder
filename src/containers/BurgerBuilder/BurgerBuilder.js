@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helper from '../../hoc/Helper';
 import Burger from '../../components/Burger/Burger';
+import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+
 
 class BurgerBuilder extends Component {
 
@@ -13,11 +15,16 @@ class BurgerBuilder extends Component {
     }
   }
 
+  addIngredientsHandler = (type) => {
+    const oldCount = this.state.ingredients[type];
+    const updatedCount = oldCount + 1;
+  }
+
   render() {
     return(
       <Helper>
         <Burger ingredients={this.state.ingredients}/>
-        <div>Burger Controls</div>
+        <BuildControls />
       </Helper>
     );  
   }
