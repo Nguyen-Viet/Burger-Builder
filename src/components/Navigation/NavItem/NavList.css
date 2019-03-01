@@ -1,8 +1,22 @@
+/*
+* Layout For mobile devices
+*/
 .NavList {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
+  flex-flow:column;
   align-items: center;
   height: 100%;
+}
+
+
+/*
+* Layout For desktop devices
+*/
+@media (min-width: 500px) {
+  .NavList {
+    flex-flow: row;
+  }
 }
