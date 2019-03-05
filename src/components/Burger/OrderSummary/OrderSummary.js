@@ -3,11 +3,16 @@ import Helper from '../../../hoc/Helper';
 import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
-    render() {
 
+    componentWillUpdate() {
+        console.log("[OrderSummary] WillUpdate");
+    }
+
+
+    render() {
         const ingredientsSummary = Object.keys(this.props.ingredients)
             .map(key => {
-                return <li key={key}>
+                return <li key={key}> 
                     <span style={{ textTransform: 'capitalize' }}>{key}</span>:
                         {this.props.ingredients[key]}
                 </li>
